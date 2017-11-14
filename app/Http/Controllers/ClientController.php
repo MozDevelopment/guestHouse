@@ -4,13 +4,14 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use \stdClass;
+use App\Title as Title;
 
 class ClientController extends Controller
 {
     //
-    public function __construct()
+    public function __construct(Title $titles)
     {
-
+        $this->titles = $titles->all();
     }
 
     public function di()
@@ -30,6 +31,7 @@ class ClientController extends Controller
          $obj->email = 'john@domain.com';
          $clients['clients'][] = $obj;
 
+         $obj = new \stdClass();
          $obj->id = 2;
          $obj->title = 'ms';
          $obj->name = 'jane';
@@ -41,7 +43,10 @@ class ClientController extends Controller
 
     public function newClient()
     {
-      return view('client/newClient');
+      $data = [];
+      $data['titles'] = $this->titles;
+      $data['modify'] = 0;
+      return view('client/newClient', $data);
     }
 
     public function create()
@@ -51,7 +56,10 @@ class ClientController extends Controller
 
     public function show($client_id)
     {
-      return view('client/show');
+      $data = [];
+      $data['titles'] = $this->titles;
+      $data['modify'] = 1;
+      return view('client/newClient', $data);
     }
 
 }

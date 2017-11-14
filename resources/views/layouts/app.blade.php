@@ -16,9 +16,9 @@
       <div class="row">
         <div class="top-bar-left">
           <ul class="dropdown menu" data-dropdown-menu="tckp8q-dropdown-menu" role="menubar">
-            <li role="menuitem"><a href="./home.html">Home</a></li>
-            <li role="menuitem"><a href="./clients.html">Clients</a></li>
-            <li role="menuitem"><a href="./reservations.html">Reservations</a></li>
+            <li role="menuitem"><a href="{{ route('home')}}">Home</a></li>
+            <li role="menuitem"><a href="{{ route('clients')}}">Clients</a></li>
+            <!-- <li role="menuitem"><a href="">Reservations</a></li>  -->
           </ul>
         </div>
       </div>
