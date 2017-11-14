@@ -38,20 +38,49 @@ class ClientController extends Controller
          $obj->last_name = 'doe';
          $obj->email = 'jane@another-domain.com';
          $clients['clients'][] = $obj;
+
         return view('client/index', $clients);
     }
 
-    public function newClient()
+    public function newClient(Request $request)
     {
+
       $data = [];
+      $data['title'] = $request->input('title');
+      $data['name'] = $request->input('name');
+      $data['last_name'] = $request->input('last_name');
+      $data['address'] = $request->input('address');
+      $data['zipcode'] = $request->input('zipcode');
+      $data['city'] = $request->input('city');
+      $data['state'] =$request->input('state');
+      $data['email'] = $request->input('email');
+
       $data['titles'] = $this->titles;
       $data['modify'] = 0;
+
+      if($request->isMethod('post'))
+      {
+        // dd($data);
+        $this->validate(
+            $request,
+            [
+              'name'=>'required|min:4',
+              'last_name'=>'required',
+              'address'=>'required',
+              'zip_code'=>'required',
+              'city'=>'required',
+              'state'=>'required',
+              'email'=>'required'
+            ]
+          );
+        // return redirect('clients');
+      }
       return view('client/newClient', $data);
     }
 
     public function create()
     {
-      return view('client/c');
+      return view('client/create');
     }
 
     public function show($client_id)
