@@ -16,6 +16,6 @@ class Client extends Model
 
     public function di()
     {
-      dd($titles)
+      dd($titles);
     }
 }

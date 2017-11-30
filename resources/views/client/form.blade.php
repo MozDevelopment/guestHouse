@@ -8,44 +8,52 @@
               method="post">
           <div class="medium-4  columns">
             <label>Title</label>
-            <select class="" name="">
+            <select class="" name="title">
               @foreach($titles as $title)
-                  <option value="{{ $title }}"> {{ $title }}</option>
+                  <option name="title" value="{{ $title }}"> {{ $title }}</option>
               @endforeach
             </select>
-
           </div>
           <div class="medium-4  columns">
             <label>Name</label>
-            <input name="form[name]" type="text">
+            <input name="name"type="text" value="{{ old('name') ? old('name'): $name}}">
+            <small class="error">{{ $errors->first('name') }}</small>
           </div>
           <div class="medium-4  columns">
             <label>Last Name</label>
-            <input name="form[lastName]" type="text">
+            <input name="last_name" type="text" value="{{ old('last_name') ? old('last_name'): $last_name}}">
+            <small class="error"> {{ $errors->first('last_name')}}</small>
           </div>
           <div class="medium-8  columns">
             <label>Address</label>
-            <input name="form[address]" type="text">
+            <input name="address" type="text" value="{{ old('address') ? old('address'): $address}}">
+            <small class="error"> {{ $errors->first('address')}} </small>
           </div>
           <div class="medium-4  columns">
-            <label>zip_code</label>
-            <input name="form[zipCode]" type="text">
+            <label>ZipCode</label>
+            <input name="zip_code" type="text" value="{{ old('zip_code') ? old('zip_code'): $zip_code }}">
+            <small class="error"> {{ $errors->first('zip_code')}} </small>
           </div>
           <div class="medium-4  columns">
             <label>City</label>
-            <input name="form[city]" type="text">
+            <input name="city"type="text" value="{{ old('city') ? old('city'): $city }}">
           </div>
+          <small class="error" >{{ $errors->first('city') }} </small>
           <div class="medium-4  columns">
             <label>State</label>
-            <input name="form[state]" type="text">
+            <input name="state" type="text" value="{{ old('state') ? old('state'): $state }}">
+            <small class="error">{{ $errors->first('state') }}</small>
           </div>
           <div class="medium-12  columns">
             <label>Email</label>
-            <input name="form[email]" type="text">
+            <input name="email" type="text" value="{{ old('email') ? old('email'): $email }}">
+            <small class="error">{{ $errors->first('email') }}</small>
           </div>
+
           <div class="medium-12  columns">
             <input value="SAVE" class="button success hollow" type="submit">
           </div>
+
         </form>
       </div>
     </div>

@@ -8,6 +8,10 @@
             <link rel="stylesheet" href="{{ asset('css/app.css') }}">
             <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.css') }}">
             <link rel="stylesheet" href="{{ asset('pickadate/lib/themes/default.date.css') }}">
+
+            <script src="{{ asset('js/vendor/jquery.js') }}"></script>
+            <script src="{{ asset('js/vendor/what-input.js') }}"></script>
+            <script src="{{ asset('js/vendor/foundation.js') }}"></script>
     <meta class="foundation-mq"></head>
     <body>
 
@@ -39,9 +43,6 @@
       $(document).foundation();
     </script>
 
-        <script src="{{ asset('js/vendor/jquery.js') }}"></script>
-        <script src="{{ asset('js/vendor/what-input.js') }}"></script>
-        <script src="{{ asset('js/vendor/foundation.js') }}"></script>
         <script src="{{ asset('js/app.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.js') }}"></script>
         <script src="{{ asset('pickadate/lib/picker.date.js') }}"></script>

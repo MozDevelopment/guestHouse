@@ -11,7 +11,9 @@
 |
 */
 
-//Simple Routes
+/**
+ * Simple Routes
+ */
 // Route::get('/', 'ContentsController@home');
 //
 // Route::get('/clients', 'ClientController@index');
@@ -28,14 +30,15 @@
 
 // Route::get('/home', 'ClientController@di');
 
-//Named Routes
-
+/**
+ *  Named Routes
+ */
 Route::get('/', 'ContentsController@home')->name('home');
 
 Route::get('/clients', 'ClientController@index')->name('clients');
 Route::get('/clients/new', 'ClientController@newClient')->name('new_client');
-
 Route::post('/clients/new', 'ClientController@newClient')->name('create_client');
+
 Route::get('/clients/{client_id}', 'ClientController@show')->name('show_client');
 Route::post('/clients/{client_id}', 'ClientController@modify')->name('update_client');
 

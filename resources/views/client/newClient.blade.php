@@ -4,56 +4,46 @@
 <div class="row">
       <div class="medium-12 large-12 columns">
         <h4>{{ $modify == 1 ? 'Modify Client' : 'New Client'}}</h4>
-        <form action="{{ $modify == 1 ? route('show_client', ['client_id'=>1]) : route('create_client')}}"
-              method="post">
+        <form action="/clients/new" method="post">
           <div class="medium-4  columns">
             <label>Title</label>
-            <select class="" name="">
+            <select  name="form[title]" >
               @foreach($titles as $title)
-                  <option name="title" value="{{ $title }}"> {{ $title }}</option>
+                  <option value="{{ $title }}"> {{ $title }}.</option>
               @endforeach
             </select>
           </div>
           <div class="medium-4  columns">
             <label>Name</label>
-            <input name="name"type="text" value="{{ old('name')}}">
-            <small class="error">{{ $errors->first('name') }}</small>
+            <input name="form[name]" type="text">
           </div>
           <div class="medium-4  columns">
             <label>Last Name</label>
-            <input name="last_name" type="text" value="{{ old('last_name')}}">
-            <small class="error"> {{ $errors->first('last_name')}}</small>
+            <input name="form[lastName]" type="text">
           </div>
           <div class="medium-8  columns">
             <label>Address</label>
-            <input name="address" type="text" value={{ old('address')}}>
-            <small class="error"> {{ $errors->first('address')}} </small>
+            <input name="form[address]" type="text">
           </div>
           <div class="medium-4  columns">
-            <label>Zip Code</label>
-            <input name="zip_code" type="text" value="{{ old('zip_code') }}">
-            <small class="error"> {{ $errors->first('zip_code')}} </small>
+            <label>Zip Ccode</label>
+            <input name="form[zip_code]" type="text">
           </div>
           <div class="medium-4  columns">
             <label>City</label>
-            <input name="city"type="text" value="{{ old('city') }}">
-            <small class="error" >{{ $errors->first('city') }} </small>
+            <input name="form[city]" type="text">
           </div>
           <div class="medium-4  columns">
             <label>State</label>
-            <input name="state" type="text" value="{{ old('state') }}">
-            <small class="error">{{ $errors->first('state') }}</small>
+            <input name="form[state]" type="text">
           </div>
           <div class="medium-12  columns">
             <label>Email</label>
-            <input name="email" type="text" value="{{ old('email') }}">
-            <small class="error">{{ $errors->first('email') }}</small>
+            <input name="form[email]" type="text">
           </div>
-
           <div class="medium-12  columns">
             <input value="SAVE" class="button success hollow" type="submit">
           </div>
-
         </form>
       </div>
     </div>

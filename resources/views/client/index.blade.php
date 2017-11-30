@@ -4,10 +4,8 @@
 <div class="row">
       <div class="medium-12 large-12 columns">
         <h4>Clients</h4>
-        <div class="medium-2  columns"><a class="button hollow success" href="{{ route('new_client')}}">ADD NEW CLIENT</a></div>
-
-
-
+        <div class="medium-2  columns"><a class="button hollow success"
+              href="{{ route('new_client')}}">ADD NEW CLIENT</a></div>
         <table class="stack">
           <thead>
             <tr>
